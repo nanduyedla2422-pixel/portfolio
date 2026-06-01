@@ -1,1 +1,539 @@
-# portfolio
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Nandu Portfolio</title>
+
+  <!-- GOOGLE FONT -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Poppins',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      background:#0f0f0f;
+      color:white;
+      overflow-x:hidden;
+      line-height:1.6;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    a{
+      text-decoration:none;
+    }
+
+    /* CONTAINER */
+
+    .container{
+      width:90%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      width:100%;
+      background:#111;
+      position:sticky;
+      top:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .nav-container{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 0;
+    }
+
+    .logo{
+      color:#a855f7;
+      font-size:30px;
+      font-weight:700;
+    }
+
+    nav ul{
+      display:flex;
+      list-style:none;
+      gap:25px;
+    }
+
+    nav ul li a{
+      color:white;
+      transition:0.3s;
+      font-size:16px;
+    }
+
+    nav ul li a:hover{
+      color:#a855f7;
+    }
+
+    /* HERO SECTION */
+
+    .hero{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:linear-gradient(to right,#0f0f0f,#1a1a1a);
+      padding:100px 20px;
+    }
+
+    .hero-content h1{
+      font-size:clamp(2.5rem,6vw,5rem);
+      margin-bottom:15px;
+    }
+
+    .hero-content span{
+      color:#a855f7;
+    }
+
+    .hero-content p{
+      color:#b3b3b3;
+      font-size:clamp(1rem,2vw,1.2rem);
+      margin-bottom:30px;
+    }
+
+    .btn{
+      display:inline-block;
+      padding:12px 28px;
+      background:#a855f7;
+      color:white;
+      border-radius:30px;
+      transition:0.3s;
+      font-weight:500;
+    }
+
+    .btn:hover{
+      background:#9333ea;
+      transform:translateY(-5px);
+    }
+
+    /* SECTIONS */
+
+    section{
+      padding:80px 0;
+    }
+
+    .section-title{
+      text-align:center;
+      color:#a855f7;
+      font-size:clamp(2rem,4vw,2.5rem);
+      margin-bottom:40px;
+    }
+
+    /* ABOUT */
+
+    .about{
+      text-align:center;
+      max-width:850px;
+      margin:auto;
+    }
+
+    .about p{
+      color:#d1d1d1;
+      font-size:17px;
+    }
+
+    /* SKILLS */
+
+    .skills-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .skill-box{
+      background:#1a1a1a;
+      padding:25px;
+      border-radius:15px;
+      text-align:center;
+      font-size:18px;
+      transition:0.3s;
+    }
+
+    .skill-box:hover{
+      transform:translateY(-8px);
+      background:#222;
+    }
+
+    /* PROJECTS */
+
+    .projects-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:25px;
+    }
+
+    .project-card{
+      background:#1a1a1a;
+      border-radius:18px;
+      overflow:hidden;
+      transition:0.3s;
+    }
+
+    .project-card:hover{
+      transform:translateY(-10px);
+    }
+
+    .project-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .project-content{
+      padding:20px;
+    }
+
+    .project-content h3{
+      margin-bottom:12px;
+      font-size:22px;
+    }
+
+    .project-content p{
+      color:#b3b3b3;
+      margin-bottom:20px;
+      font-size:15px;
+    }
+
+    /* RESUME */
+
+    .resume{
+      text-align:center;
+    }
+
+    .resume p{
+      color:#b3b3b3;
+      margin-bottom:20px;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      text-align:center;
+    }
+
+    .contact p{
+      margin:12px 0;
+      color:#d1d1d1;
+      font-size:17px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      background:#111;
+      text-align:center;
+      padding:20px;
+      color:#888;
+      font-size:15px;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .nav-container{
+        flex-direction:column;
+        gap:15px;
+      }
+
+      nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:15px;
+      }
+
+      .hero{
+        padding-top:120px;
+      }
+
+      .project-card img{
+        height:200px;
+      }
+
+    }
+
+    @media(max-width:480px){
+
+      nav ul li a{
+        font-size:14px;
+      }
+
+      .btn{
+        padding:10px 22px;
+        font-size:14px;
+      }
+
+      .project-content h3{
+        font-size:20px;
+      }
+
+      .project-content p{
+        font-size:14px;
+      }
+
+      .contact p{
+        font-size:15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+
+    <div class="container nav-container">
+
+      <h2 class="logo">Yedla.Nandu</h2>
+
+      <ul>
+
+        <li><a href="#home">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#skills">Skills</a></li>
+
+        <li><a href="#projects">Projects</a></li>
+
+        <li><a href="#resume">Resume</a></li>
+
+        <li><a href="#contact">Contact</a></li>
+
+      </ul>
+
+    </div>
+
+  </nav>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>Hi, I'm <span>Nandu</span></h1>
+
+      <p>
+        Frontend Web Developer | Java & C Enthusiast
+      </p>
+
+      <a href="#projects" class="btn">
+        View Projects
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- ABOUT -->
+
+  <section id="about">
+
+    <div class="container">
+
+      <h2 class="section-title">About Me</h2>
+
+      <div class="about">
+
+        <p>
+          I am currently pursuing my bachelor's degree at 
+          <b>Gokaraju Lailavathi Engineering college ou affiliate</b>.
+          I am passionate about Frontend Development and 
+          Java Programming, creating responsive and 
+          user-friendly web experiences.
+
+          I enjoy building modern websites, learning new 
+          technologies, and improving my coding skills.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+
+  <section id="skills">
+
+    <div class="container">
+
+      <h2 class="section-title">Skills</h2>
+
+      <div class="skills-container">
+
+        <div class="skill-box">C</div>
+
+        <div class="skill-box">C++</div>
+
+        <div class="skill-box">Java</div>
+
+        <div class="skill-box">HTML</div>
+
+        <div class="skill-box">CSS</div>
+
+        <div class="skill-box">JavaScript</div>
+
+        <div class="skill-box">Frontend Development</div>
+
+        <div class="skill-box">MySQL</div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PROJECTS -->
+
+  <section id="projects">
+
+    <div class="container">
+
+      <h2 class="section-title">Projects</h2>
+
+      <div class="projects-container">
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085"
+          alt="Career Guidance System">
+
+          <div class="project-content">
+
+            <h3>Career Guidance System</h3>
+
+            <p>
+              Python-based system helping students choose
+              career paths based on interests and skills.
+            </p>
+
+            <a href="#" class="btn">
+              View Project
+            </a>
+
+          </div>
+
+        </div>
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+          <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794"
+          alt="E-Library Application">
+
+          <div class="project-content">
+
+            <h3>E-Library Application</h3>
+
+            <p>
+              A responsive E-Library website developed using
+              HTML, CSS, and JavaScript for browsing books
+              and accessing digital learning resources.
+            </p>
+
+            <a href="#" class="btn">
+              View Project
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- RESUME -->
+
+  <section id="resume">
+
+    <div class="container">
+
+      <h2 class="section-title">Resume</h2>
+
+      <div class="resume">
+
+        <p>
+          Download my resume below.
+        </p>
+
+        <a href="#" class="btn">
+          Download Resume
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section id="contact">
+
+    <div class="container">
+
+      <h2 class="section-title">Contact</h2>
+
+      <div class="contact">
+
+        <p>Email: nanduyedla2422@gmail.com</p>
+
+        <p>Phone: +91 6303412816</p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Nandu Portfolio | All Rights Reserved
+
+  </footer>
+
+</body>
+
+</html>
